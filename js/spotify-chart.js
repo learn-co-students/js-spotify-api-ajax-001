@@ -1,38 +1,51 @@
-jQuery(document).ready(function($) {
+var url = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest?callback=?";
+var names = [];
+var numOfStreams = [];
+var ctx;
 
-  var URL = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest";
-  var ctx = $("#SpotifyChart").get(0).getContext("2d");
-  var names = [];
-  var numOfPlays = [];
+//write functions to pass spec tests here outside the jQuery doc ready
+// then call function within doc ready to get them to work
+// and display the chart correctly in index.html.
 
-  $.ajax({
-    url : URL,
-    dataType : "jsonp",
-    success : function(parsed_json) {
-      var tracks = parsed_json.tracks.slice(0, 20);
-      var max = tracks.length;
-      for (i = 0; i < max; i++) {
-        names.push(tracks[i].track_name);
-        numOfPlays.push(tracks[i].num_streams)
-      }
+function extractTop20Tracks(tracks) {
+  return tracks.slice(0, 20);
+}
 
-      var data = {
-        labels: names,
-        datasets: [
-          {
-            label: "Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: numOfPlays
-          } 
-        ]
-      };
+function extractNumberOfStreams(tracks) {
+  for (i = 0; i < tracks.length; i++) {
+    numOfStreams.push(tracks[i].num_streams);
+  }
+  return numOfStreams;
+}
 
-      var myLineChart = new Chart(ctx).Bar(data, {});    
+function extractNames(tracks) {
+  for (i = 0; i < tracks.length; i++) {
+    names.push(tracks[i].track_name);
+  }
+  return names;
+}
 
-    }
-  });
+function chartData(labels, inputData) {
+  var dataObj = {};
+  dataObj.labels = labels;
+  dataObj.datasets = [{ label : 'Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count', fillColor : 'rgba(220,220,220,0.5)', strokeColor : 'rgba(220,220,220,0.8)', highlightFill : 'rgba(220,220,220,0.75)', highlightStroke : 'rgba(220,220,220,1)', data: inputData }];
+  return dataObj;
+}
+
+function getSpotifyTracks(callback){
+  $.getJSON(url, callback);
+}
+
+function success(parsed_json) {
+  var tracks = extractTop20Tracks(parsed_json.tracks);
+  var names = extractNames(tracks);
+  var streams = extractNumberOfStreams(tracks);
+  var data = chartData(names, streams);
+  var myLineChart = new Chart(ctx).Bar(data, {});
+}
+
+$(function() {
+
+  ctx = $("#SpotifyChart").get(0).getContext("2d");
+  getSpotifyTracks(success);  
 });
-
