@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-  var URL = "http://charts.spotify.com/api/charts/most_streamed/us/latest";
+  var URL = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest";
   var ctx = $("#SpotifyChart").get(0).getContext("2d");
   var names = [];
   var numOfPlays = [];
