@@ -47,5 +47,5 @@ function success(parsed_json) {
 $(function() {
 
   ctx = $("#SpotifyChart").get(0).getContext("2d");
-  getSpotifyTracks(success);  
+  getSpotifyTracks(success);
 });
