@@ -22,6 +22,7 @@ resources: 3
 
 
 ## Resources
+
 * [Spotify Chart Docs](http://charts.spotify.com/docs)
 * [jQuery](http://api.jquery.com/) - [AJAX](http://api.jquery.com/jquery.ajax/)
 * [Chart.js](http://www.chartjs.org/docs/#getting-started) - [Bar Chart](http://www.chartjs.org/docs/#bar-chart-example-usage)

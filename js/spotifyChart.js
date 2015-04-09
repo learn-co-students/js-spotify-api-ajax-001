@@ -1,3 +1,9 @@
+$(function() {
+
+  ctx = $("#SpotifyChart").get(0).getContext("2d");
+  getSpotifyTracks(success);
+});
+
 var url = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest?callback=?";
 var names = [];
 var numOfStreams = [];
@@ -44,8 +50,4 @@ function success(parsed_json) {
   var myLineChart = new Chart(ctx).Bar(data, {});
 }
 
-$(function() {
 
-  ctx = $("#SpotifyChart").get(0).getContext("2d");
-  getSpotifyTracks(success);
-});
