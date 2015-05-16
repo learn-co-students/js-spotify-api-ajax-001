@@ -2,31 +2,50 @@ var spotifyData = {"tracks":[{"date":"2014-11-09","country":"US","track_url":"ht
 var sampleTracks = spotifyData.tracks.slice(0,5);
 
 describe("spotifyChart", function(){
-  it("extractTop20Tracks", function(){
-    expect(extractTop20Tracks(spotifyData.tracks).length).toEqual(20);
+  describe("#extractTop20Tracks", function() {
+    it("returns the first 20 tracks from the tracks array", function(){
+      expect(extractTop20Tracks(spotifyData.tracks).length).toEqual(20);
+    });
   });
 
-  it("extractNumberOfStreams", function(){
-    expect(extractNumberOfStreams(sampleTracks)).toEqual([ 2661027, 2368960, 2282810, 2239818, 2216401 ]);
+  describe("#extractNumberOfStreams", function(){
+    it("returns the streaming counts from the tracks it's passed", function(){
+      expect(extractNumberOfStreams(sampleTracks)).toEqual([ 2661027, 2368960, 2282810, 2239818, 2216401 ]);
+    });
   });
 
-  it("extractNames", function(){
-    expect(extractNames(sampleTracks)).toEqual([ 'Take Me To Church', 'Animals', "I'm Not The Only One", 'Habits (Stay High)', 'All About That Bass' ]);
-  })
+  describe("#extractNames", function(){
+    it("returns the song names from the tracks it's passed", function(){
+      expect(extractNames(sampleTracks)).toEqual([ 'Take Me To Church', 'Animals', "I'm Not The Only One", 'Habits (Stay High)', 'All About That Bass' ]);
+    });
+  });
 
-  it("chartData", function(){
-    var expected = { labels : [ 'label1', 'label2' ], datasets : [ { label : 'Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count', fillColor : 'rgba(220,220,220,0.5)', strokeColor : 'rgba(220,220,220,0.8)', highlightFill : 'rgba(220,220,220,0.75)', highlightStroke : 'rgba(220,220,220,1)', data : [ 'data1', 'data2' ] } ] };
-    expect(chartData(['label1', 'label2'], ['data1', 'data2'])).toEqual(expected);
-  })
+  describe("#chartData", function(){
+    it("returns an object where the attribute `labels` points to the first param, the attribute `datasets` points to an array of objects, the first of which hassix attributes, 1) label 2) fillColor 3) strokeColor 4) highlightFill 5) highlightStroke and 6) data, data points to the second param", function(){
+      var expected = { labels : [ 'label1', 'label2' ], datasets : [ { label : 'Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count', fillColor : 'rgba(220,220,220,0.5)', strokeColor : 'rgba(220,220,220,0.8)', highlightFill : 'rgba(220,220,220,0.75)', highlightStroke : 'rgba(220,220,220,1)', data : [ 'data1', 'data2' ] } ] };
+      expect(chartData(['label1', 'label2'], ['data1', 'data2'])).toEqual(expected);
+    });
+  });
 
-  it("getSpotifyTracks", function() {
-    spyOn($,'getJSON');
-    var called = false;
-    var callback = function(){
-      called = true;
-    }
+  describe("#getSpotifyTracks", function(){
+    it("uses jQuery's ajax function to get json (specify JSONP)", function() {
+      spyOn($,'ajax');
+      var called = false;
+      var callback = function(){
+        called = true;
+      }
+      getSpotifyTracks(callback);
+      expect($.ajax).toHaveBeenCalled();
+    });
+  });
 
-    getSpotifyTracks(callback);
-    expect($.getJSON).toHaveBeenCalledWith("http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest?callback=?", callback);
+  describe("ran server and checked that chart rendered", function(){
+    it("looks similar to the picture in the readme and I'm done with the lab", function() {
+      // type your name in the empty string below
+      var signature = "Katie Hoffman";
+      expect(signature.length).toBeGreaterThan(4);
+      var names = signature.split(" ");
+      expect(names.length).toBeGreaterThan(1);
+    });
   });
 });
