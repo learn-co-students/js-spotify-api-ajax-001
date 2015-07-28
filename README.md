@@ -1,9 +1,3 @@
----
-language: javascript
-tags: AJAX, data visualization, JavaScript library, chart
-resources: 3
----
-
 # Visualizing Spotify's Popular Genres
 
 ## Objectives
