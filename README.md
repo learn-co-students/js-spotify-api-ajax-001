@@ -8,7 +8,7 @@ Build a page that uses data from the [Spotify's Chart API](http://charts.spotify
 
 ## Instructions
 
-You will need to make an AJAX call to the url below. In the AJAX call, you'll have to specify that you JSONP, not JSON. To learn more about the advantages of JSONP, take a look at [this StackOverflow question](http://stackoverflow.com/a/2887214/2890716). Or, once everything is working, change JSONP to JSONP and look at the error that gets logged to your console.
+You will need to make an AJAX call to the url below. In the AJAX call, you'll have to specify that you JSONP, not JSON. To learn more about the advantages of JSONP, take a look at [this StackOverflow question](http://stackoverflow.com/a/2887214/2890716). Or, once everything is working, change JSONP to JSON and look at the error that gets logged to your console.
 
 [http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest](http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest)
 
