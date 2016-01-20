@@ -8,13 +8,13 @@ Build a page that uses data from the [Spotify's Chart API](http://charts.spotify
 
 ## Instructions
 
-You will need to make an AJAX call to the url below. In the AJAX call, you'll have to specify that you JSONP, not JSON. To learn more about the advantages of JSONP, take a look at [this StackOverflow question](http://stackoverflow.com/a/2887214/2890716). Or, once everything is working, change JSONP to JSON and look at the error that gets logged to your console.
+You will need to make an AJAX call to the url below. In the AJAX call, you'll have to specify JSONP, not JSON. To learn more about the advantages of JSONP, take a look at [this StackOverflow question](http://stackoverflow.com/a/2887214/2890716). Or, once everything is working, change JSONP to JSON and look at the error that gets logged to your console.
 
 [http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest](http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest)
 
 Take a look at the `spec/spotify-chart.spec.js` file to get started. This lab isn't fully tested so while every spec may pass, you might not have a functioning product. You will only be modifying the `js/spotify-chart.js` to pass the first six tests.
 
-The final step of this lab will be to run your server with `python -m SimpleHTTPServer` and opening up [localhost:8000](http://localhost:8000/). Verify that your chart looks similar to the chart in this readme, then open `spec/spotify-chart.spec.js` and set the variable `signature` equal to your first and last names, in a string. That should make the final test pass.
+The final step of this lab will be to run your server with `ruby -run -e httpd . -p 8000` and opening up [localhost:8000](http://localhost:8000/). Verify that your chart looks similar to the chart in this readme, then open `spec/spotify-chart.spec.js` and set the variable `signature` equal to your first and last names, in a string. That should make the final test pass.
 
 ## Resources
 
