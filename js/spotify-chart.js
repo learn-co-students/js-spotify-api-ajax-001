@@ -1,22 +1,25 @@
-var url = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest";
+var url = "https://api.spotify.com/v1/artists/43ZHCT0cAZBISjO8DG9PnE/top-tracks?country=SE";
 
 var dataSetProperties = {
-  label: 'Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count', 
   fillColor: 'rgba(220,220,220,0.5)', 
   strokeColor: 'rgba(220,220,220,0.8)', 
   highlightFill: 'rgba(220,220,220,0.75)', 
   highlightStroke: 'rgba(220,220,220,1)'
-}
+};
 
 $(function() {
   getSpotifyTracks(success);
 });
 
-function extractTop20Tracks(tracks) {
+// write functions to pass spec tests here outside the jQuery doc ready
+// then call function within doc ready to get them to work
+// and display the chart correctly in index.html
+
+function extractTop10Tracks(tracks) {
   // your code here
 }
 
-function extractNumberOfStreams(tracks) {
+function extractPopularity(tracks) {
   // your code here
 }
 
