@@ -4,7 +4,7 @@
 
 Build a page that uses data from the [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/) to render a bar chart using [Chart.js](http://chartkick.com/). It will display the 10 most popular Elvis Presley songs and will have track names on the x-axis and popularity on the y-axis.
 
-![example pic](https://github.com/learn-co-curriculum/js-apis-lab/img/example.png "Pic of Example")
+![example pic](https://raw.githubusercontent.com/learn-co-curriculum/js-spotify-api-ajax/cd/new_solution/img/example.png "Pic of Example")
 
 ## Instructions
 
@@ -19,5 +19,3 @@ The final step of this lab will be to run your server with `ruby -run -e httpd .
 * [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
 * [jQuery](http://api.jquery.com/) - [AJAX](http://api.jquery.com/jquery.ajax/)
 * [Chart.js](http://www.chartjs.org/docs/#getting-started) - [Bar Chart](http://www.chartjs.org/docs/#bar-chart-example-usage)
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-spotify-api-ajax' title='Visualizing Spotify's Popular Genres'>Visualizing Spotify's Popular Genres</a> on Learn.co and start learning to code for free.</p>
