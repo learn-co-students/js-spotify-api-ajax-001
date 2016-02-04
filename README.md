@@ -1,16 +1,14 @@
-# Visualizing Spotify's Popular Genres
+# Visualizing A Song's Popularity Using Spotify
 
 ## Objectives
 
-Build a page that uses data from the [Spotify's Chart API](http://charts.spotify.com/docs) to render a bar chart using [Chart.js](http://chartkick.com/). It will display the latests top 20 streamed songs in the US and will have track names on the x-axis and number of streams on the y-axis.
+Build a page that uses data from the [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/) to render a bar chart using [Chart.js](http://chartkick.com/). It will display the 10 most popular Elvis Presley songs and will have track names on the x-axis and popularity on the y-axis.
 
-![example pic](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/js-spotify-api-ajax/example.png "Pic of Example")
+![example pic](https://github.com/learn-co-curriculum/js-apis-lab/img/example.png "Pic of Example")
 
 ## Instructions
 
-You will need to make an AJAX call to the url below. In the AJAX call, you'll have to specify JSONP, not JSON. To learn more about the advantages of JSONP, take a look at [this StackOverflow question](http://stackoverflow.com/a/2887214/2890716). Or, once everything is working, change JSONP to JSON and look at the error that gets logged to your console.
-
-[http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest](http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest)
+You will need to make an AJAX call using the Artist Top Tracks URL describe here [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
 
 Take a look at the `spec/spotify-chart.spec.js` file to get started. This lab isn't fully tested so while every spec may pass, you might not have a functioning product. You will only be modifying the `js/spotify-chart.js` to pass the first six tests.
 
@@ -18,9 +16,8 @@ The final step of this lab will be to run your server with `ruby -run -e httpd .
 
 ## Resources
 
-* [Spotify Chart Docs](http://charts.spotify.com/docs)
+* [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
 * [jQuery](http://api.jquery.com/) - [AJAX](http://api.jquery.com/jquery.ajax/)
 * [Chart.js](http://www.chartjs.org/docs/#getting-started) - [Bar Chart](http://www.chartjs.org/docs/#bar-chart-example-usage)
-* [How to Use JSONP](http://terrasus.com/detail.jsp?articleID=396)
 
 <a href='https://learn.co/lessons/js-spotify-api-ajax' data-visibility='hidden'>View this lesson on Learn.co</a>

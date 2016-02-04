@@ -1,4 +1,4 @@
-var url = "http://charts.spotify.com/api/tracks/most_streamed/us/weekly/latest";
+var url = "https://api.spotify.com/v1/artists/43ZHCT0cAZBISjO8DG9PnE/top-tracks?country=SE";
 
 $(function() {
   getSpotifyTracks(success);
@@ -8,14 +8,14 @@ $(function() {
 // then call function within doc ready to get them to work
 // and display the chart correctly in index.html
 
-function extractTop20Tracks(tracks) {
-  return tracks.slice(0, 20);
+function extractTop10Tracks(tracks) {
+  return tracks.slice(0, 10);
 }
 
-function extractNumberOfStreams(tracks) {
+function extractPopularity(tracks) {
   var numOfStreams = [];
   for (i = 0; i < tracks.length; i++) {
-    numOfStreams.push(tracks[i].num_streams);
+    numOfStreams.push(tracks[i].popularity);
   }
   return numOfStreams;
 }
@@ -23,7 +23,7 @@ function extractNumberOfStreams(tracks) {
 function extractNames(tracks) {
   var names = [];
   for (i = 0; i < tracks.length; i++) {
-    names.push(tracks[i].track_name);
+    names.push(tracks[i].name);
   }
   return names;
 }
@@ -33,12 +33,11 @@ function chartData(labels, inputData) {
   dataObj.labels = labels;
   dataObj.datasets = [
     {
-      label: 'Spotify Chart of Top 20 Streamed Songs on Spotify with their Steam Count', 
       fillColor: 'rgba(220,220,220,0.5)', 
       strokeColor: 'rgba(220,220,220,0.8)', 
       highlightFill: 'rgba(220,220,220,0.75)', 
       highlightStroke: 'rgba(220,220,220,1)', 
-      data: inputData 
+      data: inputData
     }
   ];
   return dataObj;
@@ -47,7 +46,6 @@ function chartData(labels, inputData) {
 function getSpotifyTracks(callback){
   $.ajax({
     url: url,
-    dataType: "jsonp",
     success: function(result) {
       callback(result);
     }
@@ -55,9 +53,9 @@ function getSpotifyTracks(callback){
 }
 
 function success(parsedJSON) {
-  var tracks = extractTop20Tracks(parsedJSON.tracks);
+  var tracks = extractTop10Tracks(parsedJSON.tracks);
   var names = extractNames(tracks);
-  var streams = extractNumberOfStreams(tracks);
+  var streams = extractPopularity(tracks);
   var data = chartData(names, streams);
   var ctx = document.getElementById("spotify-chart").getContext("2d");
   new Chart(ctx).Bar(data);
