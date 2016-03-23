@@ -47,7 +47,7 @@ function success(parsedJSON) {
   // you will need to call on:
   //  1. extractTop20Tracks - pass it tracks
   //  2. extractNames -  pass it the result of #1
-  //  3. extractNumberOfStreams - pass it the result of #1
+  //  3. extractPopularity - pass it the result of #1
   //  4. chartData - pass it results of #2 and #3
   //  5. make a variable `ctx` and select the canvas with the id of spotify-chart
   //     * also make sure to specify 2d context
