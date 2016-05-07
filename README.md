@@ -14,10 +14,12 @@ Take a look at the `spec/spotify-chart.spec.js` file to get started. This lab is
 
 The final step of this lab will be to run your server with `ruby -run -e httpd . -p 8000` and opening up [localhost:8000](http://localhost:8000/). Verify that your chart looks similar to the chart in this readme, then open `spec/spotify-chart.spec.js` and set the variable `signature` equal to your first and last names, in a string. That should make the final test pass.
 
-**Note:** We've intentionally left out notes on using Chart.js. Be sure to [read the docs](http://www.chartjs.org/docs/) and exercise some google-foo if you run into something challenging.
+**Note:** We've intentionally left out notes on using Chart.js. Be sure to [read the docs](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs) and exercise some google-foo if you run into something challenging. Also note that these docs linked reference v1, as that is the version currently loaded in the lab. 
 
 ## Resources
 
 * [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
 * [jQuery](http://api.jquery.com/) - [AJAX](http://api.jquery.com/jquery.ajax/)
 * [Chart.js](http://www.chartjs.org/docs/#getting-started) - [Bar Chart](http://www.chartjs.org/docs/#bar-chart-example-usage)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/js-spotify-api-ajax'>Spotify API Lab </a> on Learn.co and start learning to code for free.</p>
