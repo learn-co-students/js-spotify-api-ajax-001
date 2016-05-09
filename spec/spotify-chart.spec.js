@@ -21,9 +21,17 @@ describe("spotifyChart", function(){
   });
 
   describe("#chartData", function(){
-    it("returns an object where the attribute `labels` points to the first param, the attribute `datasets` points to an array of objects, the first of which hassix attributes, 1) label 2) fillColor 3) strokeColor 4) highlightFill 5) highlightStroke and 6) data, data points to the second param", function(){
+    it("returns an object where the attribute `labels` points to the first param, the attribute `datasets` points to an array of objects, the first of which has six attributes, 1) label 2) fillColor 3) strokeColor 4) highlightFill 5) highlightStroke and 6) data, data points to the second param", function(){
       var expected = { labels : [ 'label1', 'label2' ], datasets : [ { fillColor : 'rgba(220,220,220,0.5)', strokeColor : 'rgba(220,220,220,0.8)', highlightFill : 'rgba(220,220,220,0.75)', highlightStroke : 'rgba(220,220,220,1)', data : [ 'data1', 'data2' ] } ] };
-      expect(chartData(['label1', 'label2'], ['data1', 'data2'])).toEqual(expected);
+      var data = chartData(['label1', 'label2'], ['data1', 'data2']);
+      var dataSet = data.datasets[0];
+
+      expect(data.labels).toEqual(['label1', 'label2']);
+      expect(dataSet.fillColor).toEqual('rgba(220,220,220,0.5)');
+      expect(dataSet.strokeColor).toEqual('rgba(220,220,220,0.8)');
+      expect(dataSet.highlightFill).toEqual('rgba(220,220,220,0.75)');
+      expect(dataSet.highlightStroke).toEqual('rgba(220,220,220,1)');
+      expect(dataSet.data).toEqual(['data1', 'data2']);
     });
   });
 
