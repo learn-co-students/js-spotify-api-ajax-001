@@ -21,5 +21,6 @@ The final step of this lab will be to run your server with `ruby -run -e httpd .
 * [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
 * [jQuery](http://api.jquery.com/) - [AJAX](http://api.jquery.com/jquery.ajax/)
 * [Chart.js](http://www.chartjs.org/docs/#getting-started) - [Bar Chart](http://www.chartjs.org/docs/#bar-chart-example-usage)
+* [Lab Review](https://github.com/learn-co-curriculum/javascript-video-review-spotify-api-lab)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-spotify-api-ajax'>Spotify API Lab </a> on Learn.co and start learning to code for free.</p>
