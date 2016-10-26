@@ -8,7 +8,7 @@ Build a page that uses data from the [Spotify's API Top Tracks](https://develope
 
 ## Instructions
 
-You will need to make an AJAX call using the Artist Top Tracks URL describe here [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/)
+You will need to make an AJAX call using the Artist Top Tracks URL described here [Spotify's API Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/).
 
 Take a look at the `spec/spotify-chart.spec.js` file to get started. This lab isn't fully tested so while every spec may pass, you might not have a functioning product. You will only be modifying the `js/spotify-chart.js` to pass the first six tests.
 
