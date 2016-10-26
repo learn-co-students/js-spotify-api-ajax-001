@@ -36,7 +36,7 @@ describe("spotifyChart", function(){
   });
 
   describe("#getSpotifyTracks", function(){
-    it("uses jQuery's ajax function to get json (specify JSONP)", function() {
+    it("uses jQuery's ajax function to get json", function() {
       spyOn($,'ajax');
       var called = false;
       var callback = function(){
