@@ -36,7 +36,7 @@ describe("spotifyChart", function(){
   });
 
   describe("#getSpotifyTracks", function(){
-    it("uses jQuery's ajax function to get json", function() {
+    it("uses jQuery's ajax function to get json (specify JSONP)", function() {
       spyOn($,'ajax');
       var called = false;
       var callback = function(){
@@ -50,7 +50,7 @@ describe("spotifyChart", function(){
   describe("ran server and checked that chart rendered", function(){
     it("looks similar to the picture in the readme and I'm done with the lab", function() {
       // type your name in the empty string below
-      var signature = "";
+      var signature = "Katie Hoffman";
       expect(signature.length).toBeGreaterThan(4);
       var names = signature.split(" ");
       expect(names.length).toBeGreaterThan(1);
